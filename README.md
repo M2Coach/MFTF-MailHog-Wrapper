@@ -19,9 +19,15 @@ The best way is to test what e-mails are sent to the customers, just like the li
 
 ## Installation
 
-```bash
-$ composer require m2coach/mftf-mailhog-wrapper
-```
+* Get the package
+    ```bash
+    $ composer require m2coach/mftf-mailhog-wrapper
+    ```
+
+* Configure MailHog URL in `/dev/tests/acceptance/.env`
+    ```
+    MAILHOG_BASE_URL=http://mailhog:8025/
+    ```
 
 ## Usage
 
