@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="OpenInboxActionGroup">
+        <amOnUrl url="{{InboxPage.url}}" stepKey="openInbox"/>
+        <waitForPageLoad stepKey="waitForLoad"/>
+        <seeElement selector="{{InboxGridSection.InboxContainer}}" stepKey="seeInboxContainer"/>
+    </actionGroup>
+</actionGroups>

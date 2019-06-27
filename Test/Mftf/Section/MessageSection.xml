@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="MessageSection">
+        <element name="PreviewContainer" type="block" selector=".preview"/>
+        <element name="Sender" type="text" selector="//tr[contains(./th, 'From')]/td"/>
+        <element name="Recipient" type="text" selector="//tr[contains(./th, 'To')]/td"/>
+        <element name="Subject" type="text" selector="//tr[contains(./th, 'Subject')]/td"/>
+        <element name="Content" type="block" selector=".tab-content"/>
+    </section>
+</sections>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="InboxGridSection">
+        <element name="InboxContainer" type="block" selector=".messages"/>
+        <element name="MessageRow" type="button" selector=".msglist-message"/>
+        <element name="NthMessageRow" type="button" selector=".msglist-message:nth-child({{row}})" parameterized="true" timeout="10"/>
+        <element name="NthMessageRowBySubject" type="button" selector="//div[contains(@class, 'msglist-message') and contains(.//span[contains(@class, 'subject')], '{{subject}}')][{{row}}]" parameterized="true" timeout="10"/>
+    </section>
+</sections>
