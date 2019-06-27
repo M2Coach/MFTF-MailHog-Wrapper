@@ -5,6 +5,10 @@
         <element name="InboxContainer" type="block" selector=".messages"/>
         <element name="MessageRow" type="button" selector=".msglist-message"/>
         <element name="NthMessageRow" type="button" selector=".msglist-message:nth-child({{row}})" parameterized="true" timeout="10"/>
+        <element name="NthMessageRowByRecipient" type="text" selector="//div[contains(@class, 'msglist-message') and contains(.//div[contains(@class, 'ng-scope')], '{{recipient}}')][{{row}}]" parameterized="true" timeout="10"/>
+        <element name="NthMessageRowByRecipientAndSubject" type="text" selector="//div[contains(@class, 'msglist-message') and contains(.//div[contains(@class, 'ng-scope')], '{{recipient}}') and contains(.//span[contains(@class, 'subject')], '{{subject}}')][{{row}}]" parameterized="true" timeout="10"/>
         <element name="NthMessageRowBySubject" type="button" selector="//div[contains(@class, 'msglist-message') and contains(.//span[contains(@class, 'subject')], '{{subject}}')][{{row}}]" parameterized="true" timeout="10"/>
+        <element name="DeleteAllButton" type="button" selector="//a[text()[contains(., 'Delete all messages')]]"/>
+        <element name="DeleteAllConfirmationButton" type="button" selector="//button[contains(@class, 'btn-danger') and text()[contains(., 'Delete all messages')]]"/>
     </section>
 </sections>

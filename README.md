@@ -59,6 +59,27 @@ The best way is to test what e-mails are sent to the customers, just like the li
     </actionGroup>
    ```
   
+* Open Message by it's Recipient and Index
+
+   ```xml
+    <actionGroup ref="OpenInboxActionGroup" stepKey="openInbox"/>
+    <actionGroup ref="OpenNthMessageByRecipientActionGroup" stepKey="openNthMessage">
+        <argument name="row" value="1"/>
+        <argument name="recipient" value="awesome@feature.com"/>
+    </actionGroup>
+   ```
+  
+* Open Message by it's Recipient, Subject and Index
+
+   ```xml
+    <actionGroup ref="OpenInboxActionGroup" stepKey="openInbox"/>
+    <actionGroup ref="OpenNthMessageByRecipientAndSubjectActionGroup" stepKey="openNthMessage">
+        <argument name="row" value="1"/>
+        <argument name="recipient" value="awesome@feature.com"/>
+        <argument name="subject" value="Welcome to"/>
+    </actionGroup>
+   ```
+  
 * Verify e-mail subject
 
     ```xml
@@ -82,6 +103,16 @@ The best way is to test what e-mails are sent to the customers, just like the li
          <argument name="expectedRecipient" value="subscribe@mftf.test"/>
      </actionGroup>
     ```
+  
+* Delete All Messages
+    ```xml
+    <actionGroup ref="DeleteAllMessagesActionGroup" stepKey="deleteAllMessages"/>
+    ```
+  
+* Delete currently opened Message
+    ```xml
+    <actionGroup ref="DeleteCurrentMessageActionGroup" stepKey="deleteSingleMessage"/>
+    ```
    
 ### Selectors provided
 
@@ -90,7 +121,11 @@ The best way is to test what e-mails are sent to the customers, just like the li
   * Inbox Container (`InboxContainer`)
   * Message row (`MessageRow`)
   * Message row by it's index (`NthMessageRow(#)`)
+  * Message row by recipient and it's index (`NthMessageRowByRecipient(Subject, #)`)
+  * Message row by recipient, subject and it's index (`NthMessageRowByRecipientAndSubject(Recipient, Subject, #)`)
   * Message row by subject and it's index (`NthMessageRowBySubject(Subject, #)`)
+  * Delete All Messages button (`DeleteAllButton`)
+  * Delete All Messages confirmation button (`DeleteAllConfirmationButton`)
   
 * Single Message (`MessageSection`)
   
@@ -98,6 +133,7 @@ The best way is to test what e-mails are sent to the customers, just like the li
   * Recipient (`Recipient`)
   * Subject (`Subject`)
   * Contents (`Content`)
+  * Delete Message button (`DeleteMessageButton`)
 
 ## License
 

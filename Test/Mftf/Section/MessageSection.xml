@@ -7,5 +7,6 @@
         <element name="Recipient" type="text" selector="//tr[contains(./th, 'To')]/td"/>
         <element name="Subject" type="text" selector="//tr[contains(./th, 'Subject')]/td"/>
         <element name="Content" type="block" selector=".tab-content"/>
+        <element name="DeleteMessageButton" type="button" selector="//button[contains(i/@class, 'glyphicon-trash')]"/>
     </section>
 </sections>
