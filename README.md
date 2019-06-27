@@ -13,6 +13,10 @@ Does your project look professional, if you deliver to your client a web store w
 
 The best way is to test what e-mails are sent to the customers, just like the live website does. But we should not reinvent the wheel! There are tons of solutions that help you to verify how e-mails are sent, without using real SMTP account. One of them is MailHog, which behaves (for application) just like regular SMTP server, except the fact, that messages are not sent over the Internet.
 
+## Demo
+
+![](.github/mailhog-demo.gif)
+
 ## Installation
 
 ```bash
