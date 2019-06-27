@@ -21,7 +21,73 @@ $ composer require m2coach/mftf-mailhog-wrapper
 
 ## Usage
 
-_Brace yourself, know-how is coming!_
+### Action Groups provided
+
+* Verify if Inbox is empty:
+
+    ```xml
+    <actionGroup ref="OpenInboxActionGroup" stepKey="openInbox"/>
+    <actionGroup ref="AssertNoMessagesActionGroup" stepKey="assertNoMessages"/>
+    ```
+
+* Open Message by it's Index (nth row)
+
+    ```xml
+    <actionGroup ref="OpenInboxActionGroup" stepKey="openInbox"/>
+    <actionGroup ref="OpenNthMessageActionGroup" stepKey="openNthMessage">
+        <argument name="row" value="2"/>
+    </actionGroup>
+   ```
+   
+* Open Message by it's Subject and Index
+
+   ```xml
+    <actionGroup ref="OpenInboxActionGroup" stepKey="openInbox"/>
+    <actionGroup ref="OpenNthMessageBySubjectActionGroup" stepKey="openNthMessage">
+        <argument name="row" value="1"/>
+        <argument name="subject" value="Welcome to"/>
+    </actionGroup>
+   ```
+  
+* Verify e-mail subject
+
+    ```xml
+     <actionGroup ref="AssertSubjectActionGroup" stepKey="assertSubject">
+         <argument name="expectedSubject" value="Welcome to Main Website Store"/>
+     </actionGroup>
+    ```
+  
+* Verify e-mail sender
+
+    ```xml
+     <actionGroup ref="AssertSenderActionGroup" stepKey="assertSender">
+         <argument name="expectedSender" value="learn@mftf.test"/>
+     </actionGroup>
+    ```
+  
+* Verify e-mail recipient
+
+    ```xml
+     <actionGroup ref="AssertRecipientActionGroup" stepKey="assertRecipient">
+         <argument name="expectedRecipient" value="subscribe@mftf.test"/>
+     </actionGroup>
+    ```
+   
+### Selectors provided
+
+* Inbox Grid (`InboxGridSection`)
+
+  * Inbox Container (`InboxContainer`)
+  * Message row (`MessageRow`)
+  * Message row by it's index (`NthMessageRow(#)`)
+  * Message row by subject and it's index (`NthMessageRowBySubject(Subject, #)`)
+  
+* Single Message (`MessageSection`)
+  
+  * Sender (`Sender`)
+  * Recipient (`Recipient`)
+  * Subject (`Subject`)
+  * Contents (`Content`)
 
 ## License
 

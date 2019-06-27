@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="OpenNthMessageActionGroup">
+        <arguments>
+            <argument name="row" defaultValue="1"/>
+        </arguments>
+
+        <seeInCurrentUrl stepKey="assureThatMailhogOpened" url="{{InboxPage.url}}"/>
+        <click selector="{{InboxGridSection.NthMessageRow('row')}}" stepKey="openMessage"/>
+    </actionGroup>
+</actionGroups>

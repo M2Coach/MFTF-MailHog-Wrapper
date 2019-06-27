@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AssertSenderActionGroup">
+        <arguments>
+            <argument name="expectedSender" type="string" defaultValue=""/>
+        </arguments>
+
+        <seeElement stepKey="messagePreviewOpened" selector="{{MessageSection.PreviewContainer}}"/>
+        <grabTextFrom selector="{{MessageSection.Sender}}" stepKey="grabSender"/>
+        <assertEquals stepKey="assertSender">
+            <actualResult type="variable">grabSender</actualResult>
+            <expectedResult type="string">{{expectedSender}}</expectedResult>
+        </assertEquals>
+    </actionGroup>
+</actionGroups>
