@@ -2,6 +2,6 @@ version: 2
 jobs:
   build:
     docker:
-      - image: php:7.1
+      - image: php:7.2
     steps:
       - checkout
